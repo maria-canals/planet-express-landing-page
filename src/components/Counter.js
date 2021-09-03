@@ -9,6 +9,7 @@ export const Counter = () => {
 	const [timerSeconds, setTimerSeconds] = useState('00');
 
 	let interval = useRef();
+	console.log(interval);
 
 	const startTimer = () => {
 		const countDownDate = new Date('Sep 20 2021 00:00:00').getTime();

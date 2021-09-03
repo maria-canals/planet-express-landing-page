@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/planet-express-landing-page/static/css/main.2e14de72.chunk.css",
+    "main.js": "/planet-express-landing-page/static/js/main.ec49077a.chunk.js",
+    "main.js.map": "/planet-express-landing-page/static/js/main.ec49077a.chunk.js.map",
+    "runtime-main.js": "/planet-express-landing-page/static/js/runtime-main.fb2de1d8.js",
+    "runtime-main.js.map": "/planet-express-landing-page/static/js/runtime-main.fb2de1d8.js.map",
+    "static/js/2.c3d48db3.chunk.js": "/planet-express-landing-page/static/js/2.c3d48db3.chunk.js",
+    "static/js/2.c3d48db3.chunk.js.map": "/planet-express-landing-page/static/js/2.c3d48db3.chunk.js.map",
+    "index.html": "/planet-express-landing-page/index.html",
+    "static/css/main.2e14de72.chunk.css.map": "/planet-express-landing-page/static/css/main.2e14de72.chunk.css.map",
+    "static/js/2.c3d48db3.chunk.js.LICENSE.txt": "/planet-express-landing-page/static/js/2.c3d48db3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb2de1d8.js",
+    "static/js/2.c3d48db3.chunk.js",
+    "static/css/main.2e14de72.chunk.css",
+    "static/js/main.ec49077a.chunk.js"
+  ]
+}

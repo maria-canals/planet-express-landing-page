@@ -11,6 +11,7 @@
 }
 
 .navbar-logo {
+	overflow-y: hidden;
 	img {
 		width: 80px;
 		height: 80px;
@@ -75,7 +76,6 @@
 	}
 
 	.nav-menu.active {
-		margin-top: 1.2rem;
 		background-color: $light-purple;
 		left: 0;
 		transition: all 0.5s ease;

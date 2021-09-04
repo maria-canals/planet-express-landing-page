@@ -17,6 +17,7 @@ export const Hero = () => {
 							Ver precios
 						</Button>
 					</Link>
+
 					<Link to='/newsletter' className='btn-mobile'>
 						<Button
 							className='btn pointer'

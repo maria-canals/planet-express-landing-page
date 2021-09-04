@@ -10,7 +10,7 @@ export const ServicesCalculator = ({
 }) => {
 	return (
 		<div className='calculator-main'>
-			<form onSubmit={handleSubmit}>
+			<form className='calculator-form' onSubmit={handleSubmit}>
 				{inputFields.map((element, i) => (
 					<div key={i}>
 						<h4>Paquete {i + 1}</h4>

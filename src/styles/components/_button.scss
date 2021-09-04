@@ -5,15 +5,15 @@
 
 .btn-primary {
 	background-color: $primary;
-	color: white;
-	border: 1px solid white;
+	color: $primary-white;
+	border: 1px solid $primary-white;
 }
 
 .btn-outline {
 	background-color: transparent;
-	color: white;
+	color: $primary-white;
 	padding: 8px 20px;
-	border: 1px solid white;
+	border: 1px solid $primary-white;
 	transition: all 0.3s ease-out;
 }
 
@@ -31,8 +31,8 @@
 .btn-medium,
 .btn-large {
 	&:hover {
-		background-color: white;
-		color: black;
+		background-color: $primary-white;
+		color: $primary-black;
 		transition: all 0.3s ease-out;
 	}
 }

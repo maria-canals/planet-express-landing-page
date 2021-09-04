@@ -6,7 +6,7 @@ export const NewsletterForm = ({
 	email,
 }) => {
 	return (
-		<form onSubmit={handleNewsletter}>
+		<form className='newsletter-form' onSubmit={handleNewsletter}>
 			<label htmlFor='email'></label>
 			<input
 				type='email'

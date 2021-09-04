@@ -4,8 +4,9 @@ import Swal from 'sweetalert2';
 import { ServicesCalculator } from '../components/ServicesCalculator/ServicesCalculator';
 
 export const CalculateServices = () => {
-	const initialState = [{ address: '', weight: '', price: 0 }];
-	const [inputFields, setInputFields] = useState(initialState);
+	const [inputFields, setInputFields] = useState([
+		{ address: '', weight: '', price: 0 },
+	]);
 
 	const [price, setPrice] = useState('');
 
@@ -24,7 +25,7 @@ export const CalculateServices = () => {
 	};
 
 	const handleAddPackage = () => {
-		setInputFields([...inputFields, initialState]);
+		setInputFields([...inputFields, { address: '', weight: '', price: 0 }]);
 	};
 
 	const handleDeletePackage = i => {
@@ -39,16 +40,15 @@ export const CalculateServices = () => {
 		e.preventDefault();
 
 		const result = inputFields.reduce((a, b) => a + +b.price, 0);
-		const resultIsNotANumber = isNaN(result);
+		setPrice(result);
 
-		if (!resultIsNotANumber && result !== 0) {
-			setPrice(result);
-		} else {
-			setPrice('');
+		if (result === 0) {
 			Swal.fire({
 				icon: 'error',
-				text: `Revise los campos vacíos`,
+				text: 'Revise los campos vacíos',
 			});
+		} else {
+			setPrice(result);
 		}
 	};
 

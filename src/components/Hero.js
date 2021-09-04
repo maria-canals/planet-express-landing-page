@@ -3,14 +3,8 @@ import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
 export const Hero = () => {
-	if (window.innerWidth <= 768) {
-		const video = document.getElementById('video');
-		video.removeAttribute('autoplay');
-		console.log(video);
-	}
 	return (
 		<div className='hero-container'>
-			<video id='video' src='/videos/video-4.mp4' autoPlay loop muted />
 			<div className='hero-description'>
 				<h1>Planet Express</h1>
 				<h2>Servicio de envíos espaciales</h2>

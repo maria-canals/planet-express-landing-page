@@ -18,7 +18,7 @@ export const Navbar = () => {
 				<div className='navbar-container'>
 					<Link to='/' className='navbar-logo'>
 						<img
-							src='/images/planet-express_logo.png'
+							src='./assets/planet-express_logo.png'
 							alt='planet-express-logo'
 						/>
 					</Link>

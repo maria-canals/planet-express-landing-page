@@ -1,22 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components/Button';
 
 export const Services = () => {
-	const [weight, setWeight] = useState({
-		weight1: {
-			value: '',
-			price: 0,
-		},
-		weight2: {
-			value: '',
-			price: 0,
-		},
-	});
+	const [inputFields, setInputFields] = useState([
+		{ address: '', weight: '', price: 0 },
+	]);
 
-	const { weight1, weight2 } = weight;
-	const [totalPrice, setTotalPrice] = useState();
+	const { address, weight } = inputFields;
 
-	const handleInputChange = ({ target }) => {
+	const [price, setPrice] = useState(0);
+
+	const handleChange = (i, { target }) => {
 		let price = 0;
 
 		if (target.value > 0 && target.value < 20) {
@@ -27,86 +21,103 @@ export const Services = () => {
 			price = 90.5;
 		}
 
-		setWeight({
-			...weight,
-			[target.name]: {
-				value: target.value,
-				price,
-			},
-		});
+		const values = [...inputFields];
+		values[i][target.name] = target.value;
+		values[i].price = price;
+		setInputFields(values);
 	};
 
-	const calculateHandler = e => {
-		console.log(weight);
+	const handleAddPackage = () => {
+		setInputFields([...inputFields, { address: '', weight: '', price: '' }]);
+	};
+
+	const handleDeletePackage = (i, e) => {
+		const values = [...inputFields];
+		if (values.length > 1) {
+			values.splice(i, 1);
+			setInputFields(values);
+		}
+	};
+
+	const handleResetForm = () => {
+		setInputFields([{ address: '', weight: '', price: 0 }]);
+	};
+
+	const handleSubmit = e => {
 		e.preventDefault();
-		const totalPrice = Object.values(weight).reduce(
-			(a, b) => a.price + b.price
-		);
+		console.log(inputFields);
 
-		setTotalPrice(totalPrice);
+		const result = inputFields.reduce((a, b) => +a + +b.price, 0);
+
+		console.log(inputFields, 'antes del submit');
+
+		setPrice(result);
 	};
+
 	return (
 		<div className='main-screen'>
-			<form onSubmit={calculateHandler}>
+			<h1>Calcula el precio de tus envíos!</h1>
+			<form onSubmit={handleSubmit}>
 				<div className='services-container'>
-					<h2>
-						Calcula tu pedido <i className='fas fa-rocket'></i>
-					</h2>
-					<div className='services-taxes'>
-						<ul>
-							<li>
-								<b>PRECIOS</b>
-							</li>
-							<li>
-								Menos de 20kg: <span>20$</span>
-							</li>
-							<li>
-								Entre 20kg y 50kg: <span>45.90$</span>
-							</li>
-							<li>
-								Más de 50kg: <span>90.50$</span>
-							</li>
-						</ul>
+					{inputFields.map((element, i) => (
+						<div key={i}>
+							<h4>Paquete {i + 1}</h4>
+							<div className='services-inputs'>
+								<label>País de entrega:</label>
+								<input
+									type='text'
+									name='address'
+									required
+									value={address}
+									onChange={e => handleChange(i, e)}
+								/>
+								<label>Peso:</label>
+								<input
+									type='number'
+									name='weight'
+									required
+									value={weight}
+									onChange={e => handleChange(i, e)}
+								/>
+
+								<Button
+									buttonSize='btn-medium'
+									buttonStyle='btn-primary'
+									onClick={handleDeletePackage}>
+									-
+								</Button>
+							</div>
+						</div>
+					))}
+
+					<div className='services-btns'>
+						<Button
+							buttonSize='btn-medium'
+							buttonStyle='btn-primary'
+							onClick={handleAddPackage}>
+							Añadir paquete
+						</Button>
+
+						<Button
+							className='btn'
+							buttonSize='btn-large'
+							buttonStyle='btn-outline'
+							type='submit'>
+							Calcular Precio
+						</Button>
+
+						<Button
+							className='btn'
+							buttonSize='btn-large'
+							buttonStyle='btn-outline'
+							type='submit'
+							onClick={handleResetForm}>
+							Resetear
+						</Button>
 					</div>
-
-					<fieldset>
-						<legend>
-							Introduce el peso de cada paquete que quieras enviar, con un
-							máximo de 2 paquetes.
-						</legend>
-						<label htmlFor='weight1'></label>
-						<input
-							type='number'
-							min='0'
-							placeholder='Introduce el peso del paquete en kg'
-							name='weight1'
-							value={weight1.value}
-							onChange={handleInputChange}
-						/>
-						<label htmlFor='weight2'></label>
-						<input
-							type='number'
-							min='0'
-							placeholder='Introduce el peso del paquete en kg'
-							name='weight2'
-							value={weight2.value}
-							onChange={handleInputChange}
-						/>
-					</fieldset>
-
-					<span className='services-price'>
-						{totalPrice > 0 && <b> Precio: ${totalPrice}</b>}
-					</span>
-
-					<Button
-						className='btn'
-						buttonStyle={'btn-outline'}
-						buttonSize='btn-large'
-						type='submit'>
-						Calcula el precio
-					</Button>
 				</div>
 			</form>
+			<div className='services-price'>Precio: ${price}</div>
 		</div>
 	);
 };

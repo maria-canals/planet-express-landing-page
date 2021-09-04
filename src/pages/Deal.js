@@ -7,8 +7,8 @@ export const Deal = () => {
 		<div className='main-screen'>
 			<div className='deal-container'>
 				<h1>
-					Tenemos una oferta para ti! A partir de hoy los envíos de más de 50kg
-					valen $85 !
+					Tenemos una oferta para ti! Todos los envíos de más de 50kg ahora
+					valen $85!
 				</h1>
 				<Counter />
 			</div>

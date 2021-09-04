@@ -42,13 +42,18 @@ export const CalculateServices = () => {
 	};
 
 	return (
-		<ServicesCalculator
-			price={price}
-			inputFields={inputFields}
-			handleChange={handleChange}
-			handleAddPackage={handleAddPackage}
-			handleDeletePackage={handleDeletePackage}
-			handleSubmit={handleSubmit}
-		/>
+		<div className='main-screen'>
+			<h1>Calcula el precio de sus envíos!</h1>
+			<div className='calculator-container'>
+				<ServicesCalculator
+					price={price}
+					inputFields={inputFields}
+					handleChange={handleChange}
+					handleAddPackage={handleAddPackage}
+					handleDeletePackage={handleDeletePackage}
+					handleSubmit={handleSubmit}
+				/>
+			</div>
+		</div>
 	);
 };

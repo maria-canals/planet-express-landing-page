@@ -15,15 +15,16 @@ export const Navbar = () => {
 	return (
 		<>
 			<nav className='navbar'>
-				<div className='navbar-container'>
+				<div className='navbar-logo-container'>
 					<Link to='/' className='navbar-logo'>
 						<img src='/planet-express_logo.png' alt='planet-express-logo' />
 					</Link>
+				</div>
 
+				<div className='navbar-items-container'>
 					<div className='menu-icon' onClick={handleClick}>
 						<i className={click ? 'fas fa-times' : 'fas fa-bars'} />
 					</div>
-
 					<ul className={click ? 'nav-menu active' : 'nav-menu'}>
 						<li className='nav-item'>
 							<Link

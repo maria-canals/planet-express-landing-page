@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 import { ServicesCalculator } from '../components/ServicesCalculator';
 
@@ -6,7 +7,7 @@ export const CalculateServices = () => {
 	const initialState = [{ address: '', weight: '', price: 0 }];
 	const [inputFields, setInputFields] = useState(initialState);
 
-	const [price, setPrice] = useState(0);
+	const [price, setPrice] = useState('');
 
 	const handleChange = (i, { target }) => {
 		let price = 0;
@@ -36,14 +37,24 @@ export const CalculateServices = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		const result = inputFields.reduce((a, b) => +a + +b.price, 0);
-		setPrice(result);
-		console.log(inputFields);
+
+		const result = inputFields.reduce((a, b) => a + +b.price, 0);
+		const resultIsNotANumber = isNaN(result);
+
+		if (!resultIsNotANumber && result !== 0) {
+			setPrice(result);
+		} else {
+			setPrice('');
+			Swal.fire({
+				icon: 'error',
+				text: `Revise los campos vacíos`,
+			});
+		}
 	};
 
 	return (
 		<div className='main-screen'>
-			<h1 className='calculator-title'>Calcula el precio de sus envíos!</h1>
+			<h1 className='calculator-title'>Calcule el precio de sus envíos!</h1>
 			<div className='calculator-container'>
 				<ServicesCalculator
 					price={price}

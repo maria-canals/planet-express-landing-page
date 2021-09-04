@@ -17,10 +17,7 @@ export const Navbar = () => {
 			<nav className='navbar'>
 				<div className='navbar-container'>
 					<Link to='/' className='navbar-logo'>
-						<img
-							src='./assets/planet-express_logo.png'
-							alt='planet-express-logo'
-						/>
+						<img src='/planet-express_logo.png' alt='planet-express-logo' />
 					</Link>
 
 					<div className='menu-icon' onClick={handleClick}>

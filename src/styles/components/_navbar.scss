@@ -66,6 +66,9 @@
 }
 
 @media screen and (max-width: 768px) {
+	.navbar {
+		height: 10vh;
+	}
 	.NavbarItems {
 		position: relative;
 	}
@@ -94,7 +97,6 @@
 		padding: 2rem;
 		width: 100%;
 		display: table;
-		font-size: 0.7rem;
 	}
 
 	.navbar-logo {

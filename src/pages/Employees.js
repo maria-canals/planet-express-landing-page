@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { CardList } from '../components/CardList';
-import Spinner from '../components/Spinner';
+import { CardList } from '../components/Card/CardList';
+import Spinner from '../components/Spinner/Spinner';
 import { getEmployees } from '../services/getEmployees';
 
 import { employeesData } from '../data/data';

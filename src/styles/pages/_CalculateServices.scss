@@ -1,3 +1,8 @@
+.calculator-title {
+	padding: 10px;
+	margin-top: 1rem;
+}
+
 .calculator-container {
 	margin: 2rem;
 	border-radius: 20px;
@@ -7,6 +12,7 @@
 	width: auto;
 	height: auto;
 	padding: 20px;
+	overflow-y: scroll;
 
 	form {
 		display: flex;
@@ -38,7 +44,7 @@
 	.calculator-title {
 		font-size: 2rem;
 		padding: 10px;
-		margin-top: 15rem;
+		margin-top: 1rem;
 	}
 	.calculator-container {
 		border-radius: 20px;

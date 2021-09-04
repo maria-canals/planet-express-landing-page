@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Swal from 'sweetalert2';
-import { NewsletterForm } from '../components/NewsletterForm';
+import { NewsletterForm } from '../components/NewsletterForm/NewsletterForm';
 
 export const Newsletter = () => {
 	const [email, setEmail] = useState('');

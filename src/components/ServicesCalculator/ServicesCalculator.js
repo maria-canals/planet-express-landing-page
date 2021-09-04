@@ -1,4 +1,4 @@
-import { Button } from '../components/Button';
+import { Button } from '../Button/Button';
 
 export const ServicesCalculator = ({
 	handleChange,
@@ -63,7 +63,7 @@ export const ServicesCalculator = ({
 				</div>
 			</form>
 			<div className='calculator-price'>
-				<h4>Precio: {price}</h4>
+				<h4>Precio: {price && `$${price}`}</h4>
 				<p>
 					Menos de 20kg : 10$ <br />
 					20kg o más: 20$

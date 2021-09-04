@@ -6,7 +6,7 @@ import {
 	Switch,
 } from 'react-router-dom';
 
-import { Navbar } from '../components/Navbar';
+import { Navbar } from '../components/Navbar/Navbar';
 import { Home } from '../pages/Home';
 import { Employees } from '../pages/Employees';
 import { Deal } from '../pages/Deal';

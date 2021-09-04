@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Spinner from '../components/Spinner';
+import Spinner from '../Spinner/Spinner';
 
 export const Counter = () => {
 	const [timerDays, setTimerDays] = useState('00');

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-import { ServicesCalculator } from '../components/ServicesCalculator';
+import { ServicesCalculator } from '../components/ServicesCalculator/ServicesCalculator';
 
 export const CalculateServices = () => {
 	const initialState = [{ address: '', weight: '', price: 0 }];

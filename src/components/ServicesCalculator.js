@@ -9,7 +9,7 @@ export const ServicesCalculator = ({
 	inputFields,
 }) => {
 	return (
-		<>
+		<div className='calculator-main'>
 			<form onSubmit={handleSubmit}>
 				{inputFields.map((element, i) => (
 					<div key={i}>
@@ -69,6 +69,6 @@ export const ServicesCalculator = ({
 					20kg o más: 20$
 				</p>
 			</div>
-		</>
+		</div>
 	);
 };

@@ -43,7 +43,7 @@ export const CalculateServices = () => {
 
 	return (
 		<div className='main-screen'>
-			<h1>Calcula el precio de sus envíos!</h1>
+			<h1 className='calculator-title'>Calcula el precio de sus envíos!</h1>
 			<div className='calculator-container'>
 				<ServicesCalculator
 					price={price}

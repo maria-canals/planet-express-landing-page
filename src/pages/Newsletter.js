@@ -15,7 +15,7 @@ export const Newsletter = () => {
 		setEmail(email);
 		Swal.fire({
 			icon: 'success',
-			text: `Subscrito correctamente! ${email}`,
+			text: `Suscrito correctamente! ${email}`,
 		});
 
 		setEmail('');

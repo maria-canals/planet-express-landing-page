@@ -23,7 +23,7 @@ export const Hero = () => {
 							className='btn pointer'
 							buttonStyle='btn-outline'
 							buttonSize='btn-medium'>
-							Subscribirse
+							Suscribirse
 						</Button>
 					</Link>
 				</div>

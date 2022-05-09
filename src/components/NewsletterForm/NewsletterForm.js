@@ -19,7 +19,7 @@ export const NewsletterForm = ({
 			/>
 
 			<Button className='btn' buttonStyle='btn-outline' buttonSize='btn-medium'>
-				Subscribirse
+				Suscribirse
 			</Button>
 		</form>
 	);

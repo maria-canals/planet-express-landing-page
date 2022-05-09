@@ -11,7 +11,14 @@ export const Counter = () => {
 	let interval = useRef();
 
 	const startTimer = () => {
-		const countDownDate = new Date('Sep 30 2021 00:00:00').getTime();
+		const countDownDate = new Date('July 30 2022 00:00:00').getTime();
+		console.log(
+			countDownDate,
+			timerDays,
+			timerHours,
+			timerMinutes,
+			timerSeconds
+		);
 
 		interval = setInterval(() => {
 			const now = new Date().getTime();

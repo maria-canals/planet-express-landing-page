@@ -7,7 +7,7 @@
 @import './components/cards';
 @import './components/counter';
 @import './components/spinner';
-@import '~/components/servicesCalculator';
+@import './components/_servicesCalculator.scss';
 
 @import './pages/deal';
 @import './pages/employees';

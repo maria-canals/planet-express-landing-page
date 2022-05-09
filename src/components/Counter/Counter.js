@@ -12,13 +12,7 @@ export const Counter = () => {
 
 	const startTimer = () => {
 		const countDownDate = new Date('July 30 2022 00:00:00').getTime();
-		console.log(
-			countDownDate,
-			timerDays,
-			timerHours,
-			timerMinutes,
-			timerSeconds
-		);
+		let interval;
 
 		interval = setInterval(() => {
 			const now = new Date().getTime();
